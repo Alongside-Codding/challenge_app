@@ -20,7 +20,7 @@ class _OsmPageState extends State<OsmPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Tap to add pins')),
+      appBar: AppBar(title: const Text('Open Street Map')),
       body: MultiBlocProvider(
         providers: [
           BlocProvider<GetUserLocationBloc>(
@@ -58,6 +58,7 @@ class _OsmPageState extends State<OsmPage> {
                     decoration: BoxDecoration(
                       color: sortedDistances.isNotEmpty() &&
                               tappedPoints.size == distances.size &&
+                              sortedDistances.size > 2 &&
                               distances[i] < sortedDistances[2]
                           ? Colors.green.withOpacity(0.8)
                           : Colors.red.withOpacity(0.8),
